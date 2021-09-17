@@ -1,0 +1,85 @@
+{% extends "home\basic.html" %}
+
+{% block title %}
+HOME PAGE
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+
+{% if messages %}
+<ul class="messages list-unstyled">
+    {% for message in messages %}
+    <li {% if message.tags %}>
+
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong> {{ message }} </strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<main role="main">
+
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+    <br/>
+      <div class="container" >
+        <h1 class="display-3"  style="text-align: center; color: #006622" > WELCOME TO ONLINE SUBMISSION !!
+
+          {% if user.is_authenticated  %}
+        Welcome {{request.user.first_name}}
+          {% endif %}
+</br>
+        </h1>
+        <p><center>Projects are one of the best ways to track the progress of both students and teachers. Students can put their understanding to the test, while teachers can assess how well their lessons are being received. This <b>ONLINE SUBMISSION</b> eliminates the drudgery that comes with grading, and makes creating project a breeze.</center></p>
+        <p><center>Sharing content and notes with students is easy and quick with Online Submission. Students can access the study materials as and when they want to. Teachers will have a record of the materials that they have shared and it is easier to track what has been taught and how much is left to be covered.</center</p>
+      
+   
+
+
+      </div>
+    </div>
+</br>
+    <div class="container <div class="jumbotron" style="text-align: center;  background-color:  #ccffcc">
+    
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2 align="center"><b>Share Projects </b></h2>
+          <p>Teachers can group students together and distribute projects, or send them out individually. They can keep all students on the same page by setting due dates and priority levels.  </p>
+          <p><a class="btn btn-dark" href="https://www.educloud.in/lms/assignment.jsp" role="button" style="border-radius: 50px;box-shadow: 5px 10px grey" >CLICK HERE TO VIEW </a></p>
+        </div>
+        <div class="col-md-4">
+          <h2 align="center"><b>Review Projects</b></h2>
+          <p>Projects can be made active or inactive at the click of a button; corresponding reports automatically get generated, once the projects have been made inactive. Teachers can review the submitted projects and include grades, right in the report.</p>
+          <a class="btn btn-dark" href="https://www.educloud.in/lms/student-performance.jsp" role="button" style="border-radius: 50px; box-shadow: 5px 10px grey" >CLICK HERE TO VIEW  </a></p>
+        </div>
+        <div class="col-md-4">
+          <h2 align="center"><b>Encourage Students To Submit Projects Online</b></h2>
+          <p>Students just need to type their answers and upload them into the app— it's as easy as that. Through detailed reports, they can view pending and submitted projects, submission details, and marks awarded.</p>
+          <p><a class="btn btn-dark" href="https://www.educloud.in/lms/exam-results.jsp" role="button" style="border-radius: 50px; box-shadow: 5px 10px grey">CLICK HERE TO VIEW </a></p>
+        </div>
+      </div>
+</br>
+      <hr>
+
+    </div> <!-- /container -->
+
+  </main>
+
+
+  <footer class="container" style="text-align: center">
+    <p><b>&copy; ONLINE SUBMISSION  2020-2021</b></p>
+  </footer>
+
+
+{% endblock body %}
